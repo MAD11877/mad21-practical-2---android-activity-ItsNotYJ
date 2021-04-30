@@ -11,16 +11,20 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     Boolean user_followed = false;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        User user_one = new User("Yan Jie", "Hi! I'm Yan Jie from Ngee Ann Polytechnic. I love gaming and anime and would love to make friends with anyone :D", 1, false);
+
         TextView name = findViewById(R.id.username);
-        name.setText(R.string.myName);
+        name.setText(user_one.name);
 
         TextView desc = findViewById(R.id.user_description);
-        desc.setText(R.string.myDesc);
+        desc.setText(user_one.description);
 
         Button fllw_btn = findViewById(R.id.follow_btn);
         fllw_btn.setOnClickListener(new View.OnClickListener() {
